@@ -12,7 +12,7 @@ export class ServersComponent implements OnInit {
   buttonClicked: boolean = false;
   servers: Array<string> = ['Server 1']
   @Input('nameOfElement') element: {firstName: string, lastName: string, age: number};
-  @Output() buttonClickedEvent = new EventEmitter<{oldName: string}>();
+  @Output('eventoButton') buttonClickedEvent = new EventEmitter<{oldName: string}>();
 
   constructor() {
     this.allowNewServer = true;
