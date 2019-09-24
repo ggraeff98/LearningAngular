@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Gustavo';
+
+  onClickButton(buttonData: {oldName: string}) {
+    console.log(buttonData)
+  }
 }

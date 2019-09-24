@@ -4,7 +4,10 @@
         <!-- <input type="text" [(ngModel)]="name">
         <p>{{name}}</p> -->
         <h3>App Component</h3>
-        <app-servers></app-servers>
+        <app-servers
+        [nameOfElement]="{firstName: 'Gustavo', lastName: 'Graeff', age: 21}"
+        (buttonClickedEvent)="onClickButton($event)">
+        </app-servers>
     </div>
   </div>
 </div>
