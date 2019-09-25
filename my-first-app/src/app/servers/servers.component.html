@@ -14,8 +14,6 @@
 <ng-template #noServer>
   <p>No server founded!</p>
 </ng-template>
-<p>{{ element.firstName }}</p>
-<p>{{ element.lastName }}</p>
-<p>{{ element.age }}</p>
+<ng-content></ng-content>
 <app-server *ngFor="let server of servers"></app-server>
 

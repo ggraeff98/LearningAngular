@@ -1,9 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LogginService } from '../loggin.service';
 
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.scss']
+  styleUrls: ['./servers.component.scss'],
+  providers: [LogginService]
 })
 export class ServersComponent implements OnInit {
   allowNewServer: boolean = false;
@@ -14,6 +16,7 @@ export class ServersComponent implements OnInit {
   @Input('nameOfElement') element: {firstName: string, lastName: string, age: number};
   @Output('eventoButton') buttonClickedEvent = new EventEmitter<{oldName: string}>();
 
+
   constructor() {
     this.allowNewServer = true;
   }
@@ -22,6 +25,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    // console.log(this.element)
     this.serverCreationStatus = 'Server was created! ';
     this.servers.push(this.serverName);
     this.buttonClicked = !this.buttonClicked;
